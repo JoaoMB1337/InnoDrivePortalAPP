@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser/ngx';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,26 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private iab: InAppBrowser) {
+    this.openInAppBrowser();
+  }
+
+  openInAppBrowser() {
+    const browser = this.iab.create(
+      'http://innodriveportal-env.eba-jgm2jqtj.eu-north-1.elasticbeanstalk.com/',
+      '_self',
+      {
+        location: 'no',
+        hidden: 'no',
+        clearcache: 'yes',
+        clearsessioncache: 'yes',
+        zoom: 'no',
+        hardwareback: 'yes',
+      }
+
+    );
+  }
+  
+
 
 }
