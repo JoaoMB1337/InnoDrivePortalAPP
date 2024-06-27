@@ -3,7 +3,10 @@ import type { CapacitorConfig } from '@capacitor/cli';
 const config: CapacitorConfig = {
   appId: 'io.ionic.starter',
   appName: 'InnoPortalDriveAPP',
-  webDir: 'www'
+  webDir: 'www',
+  server: {
+    allowMixedContent: true
+  }
 };
 
 export default config;
