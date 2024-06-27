@@ -19,10 +19,11 @@ export class HomePage {
       {
         location: 'no',
         hidden: 'no',
-        clearcache: 'yes',
-        clearsessioncache: 'yes',
+        clearcache: 'no',
+        clearsessioncache: 'no',
         zoom: 'no',
         hardwareback: 'yes',
+        
       }
 
     );
