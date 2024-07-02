@@ -3,4 +3,7 @@
   <domain-config cleartextTrafficPermitted="true">
     <domain includeSubdomains="true">innodriveportal-env.eba-jgm2jqtj.eu-north-1.elasticbeanstalk.com</domain>
   </domain-config>
+  <domain-config cleartextTrafficPermitted="true">
+    <domain includeSubdomains="true">192.168.2.11</domain>
+  </domain-config>
 </network-security-config>

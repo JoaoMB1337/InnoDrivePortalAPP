@@ -14,7 +14,7 @@ export class HomePage {
 
   openInAppBrowser() {
     const browser = this.iab.create(
-      'http://innodriveportal-env.eba-jgm2jqtj.eu-north-1.elasticbeanstalk.com/',
+      'http://192.168.2.11:8000/',
       '_self',
       {
         location: 'no',
