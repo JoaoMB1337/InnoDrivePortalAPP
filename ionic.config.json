@@ -1,7 +1,0 @@
-{
-  "name": "InnoPortalDriveAPP",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
