@@ -96,7 +96,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 } else if (isImageType) {
                     // Handle image selection from gallery
-                    Log.d("", "Galeria de imagens!!!");
                     Intent contentSelectionIntent = new Intent(Intent.ACTION_GET_CONTENT);
                     contentSelectionIntent.addCategory(Intent.CATEGORY_OPENABLE);
                     contentSelectionIntent.setType("image/*");
@@ -179,13 +178,12 @@ public class MainActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == REQUEST_WRITE_STORAGE) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this, "Permissão concedida", Toast.LENGTH_SHORT).show();
+                Log.d("Permission", "onRequestPermissionsResult: ");
             } else {
-                Toast.makeText(this, "Permissão negada", Toast.LENGTH_SHORT).show();
+                Log.d("Permission", "onRequestPermissionsResult: ");
             }
         }
     }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
