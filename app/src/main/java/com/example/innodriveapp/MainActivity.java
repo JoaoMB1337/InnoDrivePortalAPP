@@ -132,7 +132,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        webView.loadUrl("http://192.168.2.11:8000/");
+       // webView.loadUrl("http://192.168.2.11:8000/");
+        webView.loadUrl("http://innodriveportal-env.eba-jgm2jqtj.eu-north-1.elasticbeanstalk.com/");
+
     }
 
     @Override
