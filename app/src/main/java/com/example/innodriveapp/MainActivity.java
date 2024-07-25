@@ -12,6 +12,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.webkit.CookieManager;
 import android.webkit.DownloadListener;
 import android.webkit.URLUtil;
@@ -73,10 +74,12 @@ public class MainActivity extends AppCompatActivity {
                 }
                 uploadMessage = filePathCallback;
 
+                boolean isCaptureEnabled = fileChooserParams.isCaptureEnabled();
                 String[] acceptTypes = fileChooserParams.getAcceptTypes();
-                boolean isCamera = fileChooserParams.isCaptureEnabled() || (acceptTypes.length > 0 && "image/*".equals(acceptTypes[0]));
+                boolean isImageType = acceptTypes != null && acceptTypes.length > 0 && "image/*".equals(acceptTypes[0]);
 
-                if (isCamera) {
+                if (isCaptureEnabled) {
+                    // Handle camera capture
                     Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
                         File photoFile = null;
@@ -91,7 +94,9 @@ public class MainActivity extends AppCompatActivity {
                             startActivityForResult(takePictureIntent, FILECHOOSER_RESULTCODE);
                         }
                     }
-                } else {
+                } else if (isImageType) {
+                    // Handle image selection from gallery
+                    Log.d("", "Galeria de imagens!!!");
                     Intent contentSelectionIntent = new Intent(Intent.ACTION_GET_CONTENT);
                     contentSelectionIntent.addCategory(Intent.CATEGORY_OPENABLE);
                     contentSelectionIntent.setType("image/*");
